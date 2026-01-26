@@ -1,0 +1,39 @@
+[
+  {
+    "scene_id": 1,
+    "type": "AVATAR_ONLY",
+    "narration_text": "Phishing is one of the most common cyber attacks today. Attackers send fake emails that look legitimate to trick you into revealing sensitive information like passwords or credit card numbers. Every day, millions of these malicious emails are sent, and anyone can become a victim. Let me show you how it works.",
+    "visual_requirements": {},
+    "duration_estimate": 20.8
+  },
+  {
+    "scene_id": 2,
+    "type": "INFOGRAPHIC_ONLY",
+    "narration_text": "# Infographic: Phishing Attack Flow # Show: Email icon → User icon → Click → Bank details stolen # Duration: ~8 seconds",
+    "visual_requirements": {},
+    "duration_estimate": 8.8
+  },
+  {
+    "scene_id": 3,
+    "type": "STOCK_VIDEO",
+    "narration_text": "# Stock footage: Person checking email on laptop # Duration: ~5 seconds",
+    "visual_requirements": {
+      "stock_file": "email_checking.mp4"
+    },
+    "duration_estimate": 4.8
+  },
+  {
+    "scene_id": 4,
+    "type": "AVATAR_ONLY",
+    "narration_text": "To protect yourself from phishing: Always verify the sender's email address. Never click links in suspicious emails. Enable two-factor authentication on all accounts. And when in doubt, contact the company directly. Stay vigilant, stay safe.",
+    "visual_requirements": {},
+    "duration_estimate": 14.0
+  },
+  {
+    "scene_id": 5,
+    "type": "AVATAR_ONLY",
+    "narration_text": "Remember, your security is in your hands. Be cautious with every email you receive.",
+    "visual_requirements": {},
+    "duration_estimate": 5.6000000000000005
+  }
+]

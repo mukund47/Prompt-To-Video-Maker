@@ -1,0 +1,16 @@
+[
+  {
+    "scene_id": 1,
+    "type": "AVATAR_ONLY",
+    "narration_text": "Hello, this is a test of the AI avatar system.",
+    "visual_requirements": {},
+    "duration_estimate": 4.0
+  },
+  {
+    "scene_id": 2,
+    "type": "AVATAR_ONLY",
+    "narration_text": "If you can see this video, the pipeline is working correctly.",
+    "visual_requirements": {},
+    "duration_estimate": 4.4
+  }
+]

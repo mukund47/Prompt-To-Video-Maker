@@ -1,0 +1,14 @@
+[AVATAR_ONLY]
+Welcome to Cybersecurity Explained. I'm your AI host, and today we're diving deep into one of the most common cyber threats: phishing attacks.
+
+[INFOGRAPHIC_ONLY | infographic:phishing_attack_flow]
+A phishing attack typically follows four distinct stages. First, reconnaissance, where attackers gather information about their targets. Second, delivery, where malicious emails are sent. Third, exploitation, where victims click links or download attachments. And finally, data exfiltration, where sensitive information is stolen.
+
+[AVATAR_OVER_STOCK | stock:hacker_typing.mp4 | position:bottom-right | size:25%]
+These attacks are becoming increasingly sophisticated, targeting both individuals and large enterprises. In 2024 alone, phishing was responsible for over 80% of reported security incidents.
+
+[INFOGRAPHIC_ONLY | infographic:defense_checklist]
+But there are concrete steps you can take to protect yourself. Always verify sender email addresses. Never click suspicious links. Use multi-factor authentication. Keep your software updated. And most importantly, when in doubt, verify directly with the sender through a known contact method.
+
+[AVATAR_ONLY]
+Remember, cybersecurity is everyone's responsibility. Stay vigilant, stay informed, and stay safe. Thanks for watching.

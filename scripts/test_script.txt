@@ -1,0 +1,5 @@
+[AVATAR_ONLY]
+Hello, this is a test of the AI avatar system.
+
+[AVATAR_ONLY]
+If you can see this video, the pipeline is working correctly.

@@ -1,0 +1,17 @@
+[AVATAR_ONLY]
+Phishing is one of the most common cyber attacks today. Attackers send fake emails that look legitimate to trick you into revealing sensitive information like passwords or credit card numbers. Every day, millions of these malicious emails are sent, and anyone can become a victim. Let me show you how it works.
+
+[INFOGRAPHIC_ONLY | name:phishing_flow]
+# Infographic: Phishing Attack Flow
+# Show: Email icon → User icon → Click → Bank details stolen
+# Duration: ~8 seconds
+
+[STOCK_VIDEO | stock:email_checking.mp4]
+# Stock footage: Person checking email on laptop
+# Duration: ~5 seconds
+
+[AVATAR_ONLY]
+To protect yourself from phishing: Always verify the sender's email address. Never click links in suspicious emails. Enable two-factor authentication on all accounts. And when in doubt, contact the company directly. Stay vigilant, stay safe.
+
+[AVATAR_ONLY]
+Remember, your security is in your hands. Be cautious with every email you receive.

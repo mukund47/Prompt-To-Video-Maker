@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+.pytest_cache/
+
+# Node / Remotion
+**/node_modules/
+npm-debug.log*
+.remotion/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Heavy Assets & Models (Download these separately)
+models/checkpoints/
+models/gfpgan/weights/
+models/*.pth
+models/*.pt
+models/*.onnx
+*.safetensors
+*.bin
+
+# Generated Output & Temp Files
+exports/
+video/
+temp/
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.wav
+*.mp3
+*.aac
+*.srt
+!stock_video/*.mp4  # Keep stock video if it's small/essential, but usually better to ignore stock footage too. 
+# Deciding to ignore stock video folder generally if it contains large files, 
+# but the user might want the assets to be part of the repo if they are small.
+# Given "stock_video" usually implies raw assets, I'll exclude it if it's heavy, 
+# but for a "pipeline" repo, often you want the *code* and *config*, not the gigabytes of assets.
+# I will comment it out by default but add the directory to the ignore list to be safe.
+stock_video/
