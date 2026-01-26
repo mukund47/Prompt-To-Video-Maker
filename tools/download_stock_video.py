@@ -8,7 +8,7 @@ import json
 import sys
 from pathlib import Path
 
-PEXELS_API_KEY = "7yrrCEIIL4hI9DCJnSM5BWqmCU3FOUQ4upkGp0rAR7CGYG23XsZUiMoi"
+PEXELS_API_KEY = os.getenv("PEXELS_API_KEY")
 
 def search_pexels_video(query, orientation='landscape', per_page=5):
     """Search for videos on Pexels"""
