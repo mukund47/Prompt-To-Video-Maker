@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 venv/
+venv*/
 .env
 .pytest_cache/
 
@@ -22,9 +23,9 @@ Thumbs.db
 # Heavy Assets & Models (Download these separately)
 models/checkpoints/
 models/gfpgan/weights/
-models/*.pth
-models/*.pt
-models/*.onnx
+**/*.pth
+**/*.pt
+**/*.onnx
 *.safetensors
 *.bin
 
