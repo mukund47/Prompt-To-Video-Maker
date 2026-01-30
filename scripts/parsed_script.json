@@ -1,0 +1,47 @@
+[
+  {
+    "scene_id": 1,
+    "type": "STOCK_ONLY",
+    "narration_text": "Welcome to Cybersecurity Explained. Today we're diving deep into one of the most common cyber threats: phishing attacks.",
+    "visual_requirements": {
+      "stock_file": "cyber_intro.mp4"
+    },
+    "duration_estimate": 7.199999999999999
+  },
+  {
+    "scene_id": 2,
+    "type": "INFOGRAPHIC_ONLY",
+    "narration_text": "A phishing attack typically follows four distinct stages. First, reconnaissance, second, delivery, third, exploitation, and finally, data exfiltration.",
+    "visual_requirements": {
+      "infographic_id": "phishing_attack_flow"
+    },
+    "duration_estimate": 7.199999999999999
+  },
+  {
+    "scene_id": 3,
+    "type": "STOCK_ONLY",
+    "narration_text": "These attacks are becoming increasingly sophisticated, targeting both individuals and large enterprises.",
+    "visual_requirements": {
+      "stock_file": "hacker_typing.mp4"
+    },
+    "duration_estimate": 4.8
+  },
+  {
+    "scene_id": 4,
+    "type": "INFOGRAPHIC_ONLY",
+    "narration_text": "But there are concrete steps you can take to protect yourself. Always verify sender email addresses. Never click suspicious links. Use multi-factor authentication.",
+    "visual_requirements": {
+      "infographic_id": "defense_checklist"
+    },
+    "duration_estimate": 9.2
+  },
+  {
+    "scene_id": 5,
+    "type": "STOCK_ONLY",
+    "narration_text": "Remember, cybersecurity is everyone's responsibility. Stay vigilant, stay informed, and stay safe. Thanks for watching.",
+    "visual_requirements": {
+      "stock_file": "cyber_outro.mp4"
+    },
+    "duration_estimate": 6.0
+  }
+]
