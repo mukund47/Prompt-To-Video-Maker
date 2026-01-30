@@ -14,13 +14,17 @@ def estimate_duration(text, wpm=150):
     return (words / wpm) * 60  # Convert to seconds
 
 def parse_scene_marker(line):
-    """Parse scene type markers like [AVATAR_ONLY] or [AVATAR_OVER_STOCK | stock:file.mp4]"""
+    """Parse scene type markers like [STOCK_ONLY], [INFOGRAPHIC_ONLY], or [FULL_COMPOSITE | stock:file.mp4 | infographic:id]"""
     match = re.match(r'\[([A-Z_]+)(?:\s*\|\s*(.+))?\]', line.strip())
     if not match:
         return None
     
     scene_type = match.group(1)
     params_str = match.group(2) or ""
+    
+    # Map legacy avatar types to STOCK_ONLY
+    if scene_type in ["AVATAR_ONLY", "AVATAR_OVER_STOCK"]:
+        scene_type = "STOCK_ONLY"
     
     params = {}
     if params_str:
@@ -72,10 +76,6 @@ def parse_script(script_path):
                 current_scene['visual_requirements']['stock_file'] = params['stock']
             if 'infographic' in params:
                 current_scene['visual_requirements']['infographic_id'] = params['infographic']
-            if 'position' in params:
-                current_scene['visual_requirements']['avatar_position'] = params['position']
-            if 'size' in params:
-                current_scene['visual_requirements']['avatar_size'] = params['size']
             if 'layout' in params:
                 current_scene['visual_requirements']['layout'] = params['layout']
         else:

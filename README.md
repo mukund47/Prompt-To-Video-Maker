@@ -1,11 +1,10 @@
-# AI Cybersecurity Video Production Pipeline
+# AI Cybersecurity Video Pipeline (No-Avatar)
 
 Complete local-first, free-only AI system for producing professional cybersecurity explainer videos.
 
 ## Features
 
-- **Animated Infographics:** Remotion-based programmatic animations explaining cybersecurity concepts
-- **AI Female Avatar:** SadTalker-powered talking head with overlay capabilities
+- **Animated Infographics:** Remotion/Manim-based animations explaining cybersecurity concepts
 - **Professional Voiceover:** Piper TTS with female voice (en_US-lessac-medium)
 - **Stock Video Integration:** FFmpeg-based compositing
 - **Deterministic Assembly:** Script-driven, repeatable video production
@@ -43,13 +42,6 @@ ollama pull llama3.2:3b
 # TTS voice model
 cd voice/voice_models
 Invoke-WebRequest -Uri "https://github.com/rhasspy/piper/releases/download/v1.2.0/en_US-lessac-medium.onnx" -OutFile "en_US-lessac-medium.onnx"
-
-# Avatar model (SadTalker)
-cd models/avatar
-git clone https://github.com/OpenTalker/SadTalker.git
-cd SadTalker
-pip install -r requirements.txt
-python scripts/download_models.py
 ```
 
 ### 3. Create Your Script
@@ -57,13 +49,13 @@ python scripts/download_models.py
 Write a script using scene markers in `scripts/raw_script.txt`:
 
 ```
-[AVATAR_ONLY]
+[STOCK_ONLY | stock:intro.mp4]
 Welcome to Cybersecurity Explained.
 
 [INFOGRAPHIC_ONLY | infographic:phishing_flow]
 Phishing attacks follow four stages: reconnaissance, delivery, exploitation, and exfiltration.
 
-[AVATAR_OVER_STOCK | stock:hacker.mp4 | position:bottom-right | size:25%]
+[FULL_COMPOSITE | stock:hacker.mp4 | infographic:phishing_flow]
 These attacks are increasingly sophisticated.
 ```
 
@@ -78,8 +70,7 @@ python tools/parse_script.py scripts/raw_script.txt scripts/parsed_script.json
 # Generate voice narration
 python tools/generate_voice.py scripts/parsed_script.json voice/tts_output/
 
-# Render avatar videos (requires source image)
-python tools/render_avatars.py scripts/scene_timing.json
+
 
 # Composite overlays
 python tools/composite_scenes.py scripts/scene_timing.json
@@ -96,28 +87,27 @@ cybersec_ai_video_pipeline/
 ├── infographics/         # Animated infographics (specs → Remotion → MP4)
 ├── stock_video/          # Stock footage (raw → processed)
 ├── voice/                # TTS narration (text → WAV)
-├── avatar/               # AI avatar (image + audio → MP4)
+
 ├── video/                # Scene composition and final renders
-├── models/               # AI model weights (LLM, TTS, avatar)
+├── models/               # AI model weights (LLM, TTS)
 ├── tools/                # Automation scripts
-└── exports/              # Final videos and assets
+├── exports/              # Final videos and assets
+└── stock_video/          # Stock footage (raw → processed)
 ```
 
 ## Scene Types
 
 | Type | Description | Usage |
 |------|-------------|-------|
-| `AVATAR_ONLY` | Full-screen talking head | Host introduction/outro |
 | `INFOGRAPHIC_ONLY` | Animated explanations | Technical concepts |
 | `STOCK_ONLY` | B-roll footage | Context setting |
-| `AVATAR_OVER_STOCK` | Avatar overlay on footage | Commentary over visuals |
-| `FULL_COMPOSITE` | Stock + infographic + avatar | Complex explanations |
+| `FULL_COMPOSITE` | Stock + infographic | Complex explanations |
 
 ## Key Technologies
 
 - **LLM:** Llama 3.2 (3B) for script parsing
 - **TTS:** Piper (en_US-lessac-medium) for voiceover
-- **Avatar:** SadTalker (optimized for 4 GB VRAM)
+
 - **Infographics:** Remotion (React-based programmatic video)
 - **Assembly:** FFmpeg with NVENC hardware encoding
 
@@ -133,13 +123,13 @@ cybersec_ai_video_pipeline/
 **Typical 5-minute video (15 scenes):**
 - Script parsing: ~2-3 min
 - Voice synthesis: ~1-2 min
-- Avatar rendering: ~20-30 min (longest)
+
 - Final assembly: ~3-5 min
 - **Total:** ~30-45 minutes
 
 ## VRAM Optimization
 
-- SadTalker limited to 512x512 resolution
+
 - Single batch processing to avoid OOM
 - CUDA cache clearing between renders
 - NVENC hardware encoding for final assembly
@@ -149,7 +139,6 @@ cybersec_ai_video_pipeline/
 All tools are open source. Check individual model licenses:
 - Llama 3.2: Meta license
 - Piper TTS: MIT
-- SadTalker: Custom license
 - Remotion: Free for local use
 
 ## Support

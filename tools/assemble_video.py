@@ -14,25 +14,25 @@ def get_scene_video_path(scene, base_dir=Path(".")):
     scene_id = scene['scene_id']
     
     # Check for pre-composited scene first
-    composite_path = base_dir / f"video/scenes/avatar_overlay_scenes/scene_{scene_id:03d}_composite.mp4"
+    composite_path = base_dir / f"video/scenes/composited_scenes/scene_{scene_id:03d}_composite.mp4"
     if composite_path.exists():
         return composite_path
     
-    if scene_type == "AVATAR_ONLY":
-        return base_dir / f"avatar/renders/talking_head_segments/scene_{scene_id:03d}.mp4"
+    # All legacy avatar scenes are now handled as stock or skipped
+    if scene_type in ["STOCK_ONLY", "AVATAR_ONLY", "AVATAR_OVER_STOCK"]:
+        stock_file = scene['visual_requirements'].get('stock_file', f'scene_{scene_id}.mp4')
+        return base_dir / f"stock_video/processed/{stock_file}"
     
     elif scene_type == "INFOGRAPHIC_ONLY":
         infographic_id = scene['visual_requirements'].get('infographic_id', f'scene_{scene_id}')
         return base_dir / f"video/scenes/infographic_scenes/{infographic_id}.mp4"
     
-    elif scene_type == "STOCK_ONLY":
-        stock_file = scene['visual_requirements'].get('stock_file', f'scene_{scene_id}.mp4')
-        return base_dir / f"stock_video/processed/{stock_file}"
-    
-    elif scene_type in ["AVATAR_OVER_STOCK", "FULL_COMPOSITE"]:
+    elif scene_type == "FULL_COMPOSITE":
+        # Full composite is Stock + Infographic
         return composite_path
     
     else:
+        # Default fallback
         return base_dir / f"video/scenes/scene_{scene_id:03d}.mp4"
 
 def create_concat_file(scenes, output_path, base_dir=Path(".")):
