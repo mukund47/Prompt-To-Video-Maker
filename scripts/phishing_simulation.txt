@@ -1,0 +1,14 @@
+[STOCK_ONLY | stock:cyber_intro.mp4]
+Phishing is the most common entry point for cyber attacks. It starts with a deceptive message designed to trick you.
+
+[INFOGRAPHIC_ONLY | infographic:PhishingFlow]
+The attack flow is simple but effective. An attacker sends a weaponized email. The victim opens it. They are redirected to a fake site. And their credentials are stolen.
+
+[INFOGRAPHIC_ONLY | infographic:PhishingSimulation]
+Let's see this in action. The user receives an urgent email. It looks legitimate. They pause, then click the link. Immediately, the attacker captures their session.
+
+[INFOGRAPHIC_ONLY | infographic:PhishingTypes]
+But it's not just email. Spear phishing targets individuals. Smishing uses SMS. Vishing uses voice calls. Attackers are constantly evolving their methods.
+
+[STOCK_ONLY | stock:cyber_outro.mp4]
+Stay vigilant. Verify the source. And never click on suspicious links. Your security is in your hands.

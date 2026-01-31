@@ -29,9 +29,14 @@ models/gfpgan/weights/
 *.safetensors
 *.bin
 
-# Generated Output & Temp Files
-exports/
-video/
+# Media Cache & Temp
+# Media Cache & Temp
+media/*
+!media/videos/
+media/videos/*
+!media/videos/v7_manim_diagrams/
+media/videos/v7_manim_diagrams/*
+!media/videos/v7_manim_diagrams/1080p60/
 temp/
 *.mp4
 *.avi
